@@ -13,7 +13,7 @@ const Nav = () => {
   };
 
   return (
-    <header className="padding-x py-8 absolute z-10 w-full">
+    <header className="padding-x py-5 top-0 shadow-sm fixed bg-pale-blue z-10 w-full">
       <nav className="flex justify-between items-center max-container">
         <a href="/">
           <img
@@ -41,7 +41,7 @@ const Nav = () => {
           <span>/</span>
           <a href="/">Explore now</a>
         </div>
-        <div onClick={handleNav} className="block md:hidden">
+        <div onClick={handleNav} className="block md:hidden cursor-pointer">
           <img
             src={nav ? hamburgerClose : hamburgerOpen}
             alt="hamburger icon"
@@ -54,8 +54,8 @@ const Nav = () => {
         <nav
           className={
             nav
-              ? "fixed md:hidden left-0 top-0 w-[60%] h-full bg-[#000300] ease-in-out duration-500"
-              : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
+              ? "z-10 fixed md:hidden left-0 top-0 w-[60%] h-full bg-[#000300] ease-in-out duration-500"
+              : "z-10 ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
           }
         >
           <figure className="py-8">
@@ -73,6 +73,7 @@ const Nav = () => {
             {navLinks.map((item) => (
               <li key={item.href}>
                 <a
+                  onClick={handleNav}
                   href={item.href}
                   className="block font-montserrat p-4 border-b border-gray-600 leading-normal text-lg text-slate-gray hover:text-website-orange transition duration-300 ease-in-out cursor-pointer"
                 >
@@ -82,6 +83,11 @@ const Nav = () => {
             ))}
           </ul>
         </nav>
+
+        <div
+          onClick={handleNav}
+          className={nav ? "bg-[#00000081] z-[8] fixed inset-0 cursor-pointer" : "hidden"}
+        ></div>
       </nav>
     </header>
   );
