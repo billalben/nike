@@ -16,6 +16,10 @@ html {
   scroll-padding-top: 100px;
 }
 
+html:has(nav.active) {
+  overflow: hidden;
+}
+
 @layer components {
   .max-container {
     max-width: 1440px;

@@ -54,7 +54,7 @@ const Nav = () => {
         <nav
           className={
             nav
-              ? "z-10 fixed md:hidden left-0 top-0 w-[60%] h-full bg-[#000300] ease-in-out duration-500"
+              ? "z-10 fixed active md:hidden left-0 top-0 w-[60%] h-full bg-[#000300] ease-in-out duration-500"
               : "z-10 ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
           }
         >
